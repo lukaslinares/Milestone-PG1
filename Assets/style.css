@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: radial-gradient(#dbdbdc, #020923);   
+   }
+
+   html{
+    min-height: 100vh;
+   }
+
+.page-title{
+    color: #fefefe;
+    font-family: 'Silkscreen', cursive;
+    font-weight: normal;
+    text-align: center;
+    font-size: 5em;
+}
+
+.match-info-container{
+   grid-column: 1 / -1; 
+   display: flex;
+   justify-content: space-between;
+}
+
+.match-info{
+    color: white ;
+    font-family: 'Silkscreen', cursive;
+    font-size: 3em;
+}
+
+.match-container{
+   display: grid;
+   grid-template-columns: repeat(4, auto); 
+   grid-gap:10px;
+   margin: 50px;
+   justify-content: center;
+}
+
+.card{
+    position: relative;
+    height: 250px;
+    width: 175px;
+    margin: 25px;
+    padding-top: 50;
+}
+
+.nintendo{
+    height: 175px;
+    width: 170px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-back:hover .nintendo{
+    height: 150px;
+    width: 150px;
+}
+
+.card-front{
+    transform:rotateY(180deg);
+}
+
+.card-back{
+    background-color: black;
+    border-color:white ;
+}
+
+.card-front{
+    background-color: white;
+    border-color: black ;
+}
+
+.mushroom {
+    position: absolute;
+    height: 47px ;
+    width: 47px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-back:hover .mushroom{
+    width: 52px;
+    height: 52px;
+}
+
+.card-front:hover .mushroom{
+    width: 52px;
+    height: 52px;
+}
+
+.mushroom-top-left{
+  top: 0;
+  left: 0;  
+}
+
+.mushroom-top-right{
+    top: 0;
+    right: 0;  
+  }
+
+.mushroom-bottom-left{
+    bottom: 0;
+    left: 0;  
+  }
+
+.mushroom-bottom-right{
+    bottom: 0;
+    right: 0;  
+  }
+
+.card-inbetween{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width:1px;
+    border-style: solid;
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
+}
+
+.value{
+   width: 110px;
+   height: 110px; 
+   transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-front:hover .value{
+    width: 100px;
+    height: 100px;
+} 
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: white;
+    font-family:'Silkscreen', cursive;
+}
+
+.overlay-text-small{
+    font-size: .8em;
+}
+
+.overlay-text.visible{
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow{
+    from{
+        background-color:rgba(0,0,0,0);
+        font-size: 0;
+    }
+    to{
+        background-color:rgba(0,0,0,.8);
+        font-size: 10em;
+    }
+}
+
+/* @media (max-width: 600px){
+    .match-container{
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .match-info-container{
+    flex-direction: column;
+    align-items: center;
+    }
+} */
