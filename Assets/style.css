@@ -77,6 +77,22 @@ html{
     transform:rotateY(180deg);
 }
 
+.card-front:hover .mushroom{
+    width: 42px;
+    height: 42px;
+}
+
+.card-front:hover .value{
+    width: 100px;
+    height: 100px;
+} 
+
+.value{
+    width: 110px;
+    height: 110px; 
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+ }
+
 .mushroom {
     position: absolute;
     height: 47px ;
@@ -115,5 +131,13 @@ html{
     border-radius: 12px;
     border-width:1px;
     border-style: solid;
+}
+
+.card:hover .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-front {
+    transform: rotateY(0);
 }
 
