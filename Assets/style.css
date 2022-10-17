@@ -40,10 +40,80 @@ html{
 }
 
 .card{
-    background-color: black;
     position: relative;
     height: 250px;
     width: 175px;
     margin: 25px;
     padding-top: 50;
 }
+
+.nintendo{
+    height: 175px;
+    width: 170px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-back{
+    background-color: black;
+    border-color:white ;
+}
+
+.card-back:hover .nintendo{
+    height: 150px;
+    width: 150px;
+}
+
+.card-back:hover .mushroom{
+    width: 42px;
+    height: 42px;
+}
+
+.card-front{
+    background-color: white;
+    border-color: black ;
+}
+
+.card-front{
+    transform:rotateY(180deg);
+}
+
+.mushroom {
+    position: absolute;
+    height: 47px ;
+    width: 47px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.mushroom-top-left{
+    top: 0;
+    left: 0;  
+}
+  
+.mushroom-top-right{
+    top: 0;
+    right: 0;  
+}
+  
+.mushroom-bottom-left{
+    bottom: 0;
+    left: 0;  
+}
+  
+.mushroom-bottom-right{
+    bottom: 0;
+    right: 0;  
+}
+
+.card-shared{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width:1px;
+    border-style: solid;
+}
+
