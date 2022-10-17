@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Game</title>
+    <!-- linking Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <script src="./index.js" async></script> 
+</head>
+<body>
+    <h1 class="page-title">Nintendo Match Game</h1>
+    <div class="overlay-text visible">
+        Click to Start
+    </div>
+    <div id="game-over-text" class="overlay-text">
+        Game Over 
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div class="">
+        You Win!
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div class="match-container">
+        <!-- Dynamic Elements -->
+        <div class="match-info-container">
+            <div class="match-info">
+                Time Remaining: 
+                <span id="time">60</span>
+            </div>
+            <div class="match-info">
+                Flips:
+                <span id="flips">0</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
