@@ -56,6 +56,27 @@ class Nintendo{
         this.timer.innerText = this.timeRemaining;
         this.flipper.innerText = this.totalClicks;
     }
+    hideCards(){
+        this.cardsArray.forEach(card =>{
+            card.classList.remove('visible');
+            card.classList.remove('matched');
+        });
+    }
+    flipCard(card){
+        if(this.canFlipCard(card)){
+            this.audioController.flip();
+            this.totalClicks++;
+            this.flipper.innerText = this.totalClicks;
+            card.classList.add('visible');
+            if(this.cardToCheck)
+                this.checkForCardMatch(card)
+                else
+                    this.cardToCheck = card;
+        }
+    }
+    canFlipCard(card){
+        return true;
+    }
 }
 
 function ready(){
