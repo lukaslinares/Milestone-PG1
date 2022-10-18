@@ -31,3 +31,23 @@ class AudioController{
         this.gameOverSound.play();
     }
 }
+
+function ready(){
+    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+    let cards = Array.from(document.getElementsByClassName('card'))
+    let game = new Nintendo(60, cards);
+
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', () =>{
+           overlay.classList.remove('visible'); 
+           game.startGame();
+            let audioController = new AudioController();
+        });
+    });
+    cards.forEach(card =>{
+        card.addEventListener('click',()=>{
+            game.flipCard(card);
+        });
+    });
+}
+ready();
