@@ -32,6 +32,32 @@ class AudioController{
     }
 }
 
+class Nintendo{
+    constructor(totalTime, cards){
+        this.cardsArray = cards;
+        this.totalTime = totalTime;
+        this.timeRemaining = totalTime;
+        this.timer = document.getElementById('time');
+        this.flipper = document.getElementById('flips');
+        this.audioController = new AudioController();
+    }
+    startGame(){
+        this.cardToCheck = null;
+        this.totalClicks = 0;
+        this.timeRemaining = this.totalTime;
+        this.matchedCards = [];
+        this.busy = true;
+        setTimeout(()=>{
+            this.audioController.startMusic();
+            this.countDown = this.startCountdown();
+            this.busy = false; 
+        }, 500);
+        this.hideCards();
+        this.timer.innerText = this.timeRemaining;
+        this.flipper.innerText = this.totalClicks;
+    }
+}
+
 function ready(){
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'))
